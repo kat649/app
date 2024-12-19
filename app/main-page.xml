@@ -1,0 +1,44 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="bg-gray-100">
+    <ActionBar title="Advanced Calculator" class="bg-blue-600 text-white" />
+    
+    <GridLayout rows="auto, *, auto" class="p-2">
+        <!-- Display -->
+        <StackLayout row="0" class="bg-white p-4 m-2 rounded-lg">
+            <Label text="{{ display }}" class="text-right text-3xl font-bold" />
+            <ListView items="{{ history }}" height="100">
+                <ListView.itemTemplate>
+                    <Label text="{{ $value }}" class="text-right text-sm text-gray-600" />
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <!-- Calculator Buttons -->
+        <GridLayout row="2" columns="*, *, *, *" rows="auto, auto, auto, auto, auto" class="m-2">
+            <!-- Memory and Clear -->
+            <Button text="MC" tap="{{ memoryClear }}" class="btn btn-secondary m-1" row="0" col="0" />
+            <Button text="MR" tap="{{ memoryRecall }}" class="btn btn-secondary m-1" row="0" col="1" />
+            <Button text="M+" tap="{{ memoryAdd }}" class="btn btn-secondary m-1" row="0" col="2" />
+            <Button text="C" tap="{{ clear }}" class="btn btn-danger m-1" row="0" col="3" />
+
+            <!-- Numbers -->
+            <Button text="7" tap="{{ numberInput }}" class="btn btn-primary m-1" row="1" col="0" />
+            <Button text="8" tap="{{ numberInput }}" class="btn btn-primary m-1" row="1" col="1" />
+            <Button text="9" tap="{{ numberInput }}" class="btn btn-primary m-1" row="1" col="2" />
+            <Button text="÷" tap="{{ operation }}" class="btn btn-warning m-1" row="1" col="3" />
+
+            <Button text="4" tap="{{ numberInput }}" class="btn btn-primary m-1" row="2" col="0" />
+            <Button text="5" tap="{{ numberInput }}" class="btn btn-primary m-1" row="2" col="1" />
+            <Button text="6" tap="{{ numberInput }}" class="btn btn-primary m-1" row="2" col="2" />
+            <Button text="×" tap="{{ operation }}" class="btn btn-warning m-1" row="2" col="3" />
+
+            <Button text="1" tap="{{ numberInput }}" class="btn btn-primary m-1" row="3" col="0" />
+            <Button text="2" tap="{{ numberInput }}" class="btn btn-primary m-1" row="3" col="1" />
+            <Button text="3" tap="{{ numberInput }}" class="btn btn-primary m-1" row="3" col="2" />
+            <Button text="-" tap="{{ operation }}" class="btn btn-warning m-1" row="3" col="3" />
+
+            <Button text="0" tap="{{ numberInput }}" class="btn btn-primary m-1" row="4" col="0" colSpan="2" />
+            <Button text="=" tap="{{ calculate }}" class="btn btn-success m-1" row="4" col="2" />
+            <Button text="+" tap="{{ operation }}" class="btn btn-warning m-1" row="4" col="3" />
+        </GridLayout>
+    </GridLayout>
+</Page>
